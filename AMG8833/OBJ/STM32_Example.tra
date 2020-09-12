@@ -1,0 +1,26 @@
+*** Creating Trace Output File '..\OBJ\STM32_Example.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '"..\obj\startup_stm32f10x_hd.o"'
+### List of Objects: adding '"..\obj\main.o"'
+### List of Objects: adding '"..\obj\io_init.o"'
+### List of Objects: adding '"..\obj\delay.o"'
+### List of Objects: adding '"..\obj\sys.o"'
+### List of Objects: adding '"..\obj\usart.o"'
+### List of Objects: adding '"..\obj\timer.o"'
+### List of Objects: adding '"..\obj\ds1302.o"'
+### ADS-LD Command completed:
+--device DARMSTM "..\obj\startup_stm32f10x_hd.o" "..\obj\main.o" "..\obj\io_init.o" "..\obj\delay.o" "..\obj\sys.o" "..\obj\usart.o" "..\obj\timer.o" "..\obj\ds1302.o" --strict --scatter "..\OBJ\STM32_Example.sct" 
+--autoat --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list "..\OBJ\STM32_Example.map" -o "..\OBJ\STM32_Example.axf"### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '..\OBJ\STM32_Example.axf'
+### ADS-LD Command File: '..\OBJ\STM32_Example.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '..\OBJ\STM32_Example.lnp', Handle=0x000005CC
+### Writing '.lnp' file
+### ADS-LD Command file '..\OBJ\STM32_Example.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.

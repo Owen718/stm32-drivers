@@ -344,8 +344,102 @@ void OLED_SetCursorAddrese(u8 x,u8 y)
 		OLED_send_cmd((x&0x0F)|0x00);   //设置列低起始地址(半字节)			
 }
 
+
+
+void float_to_str(float n,char *reChar,int zsize,int xsize,int flag)//功能将浮点数n转成字符串，保存到以reChar地址开头的字符数组中（可实现插入）
+//flag=0:直接转换浮点数到指定地址    flag=1：将转换的浮点数插入到指定地址位置
+//zsize：n整数部分最大可能的位数。   xsize：n小数部分最大可能的位数+1(包含小数点)。
+//reChar：用于返回处理后的字符串
+{
  
-void OLED_DisplayString(u8 x,u8 y,u8 width,u8 height,u8 *str)
+    int z,x,i=0,j=0;
+	//char a[1+zsize+xsize];
+	char a[10];
+	
+    n=n+0.00001;//+0.00001避免浮点数精度丢失,可根据你传感器输出实际数字位数修改，不要超出类型范围
+    z=(int)n;
+    x=(int)((n-z)*10);//取小数数字，最大1位小数 *10  2位*100 3位*1000 需要自行修改 你也可以自己写10次方函数利用xsize运算 
+ 
+    while(x/10!=0)
+    {
+        a[i++]=x%10+'0';
+        x=x/10;
+    }
+    a[i++]=x+'0';
+    a[i++]='.';
+    while(z/10!=0)
+    {
+        a[i++]=z%10+'0';
+        z=z/10;
+    }
+    a[i++]=z+'0';
+        a[i]=0;
+ 
+    for(i=zsize+xsize-1;i>=0;i--)
+        reChar[j++]=a[i];
+    if(flag==0)
+        reChar[j]=0;
+}
+
+
+u8 int_num_length(int n)  //返回整数的长度
+{
+	int length=0;
+	if(n>0)  //n>0时
+	{
+		while(n)
+		{
+			length++;
+			n=n/10;
+		}	
+		return length;
+	}
+	else if(n==0) //若n==0
+	{
+		return 1;
+	}
+	else
+	{
+		n=n*-1;
+		while(n)
+		{
+			length++;
+			n=n/10;
+		}
+		return length;
+	}
+}
+
+
+void int_to_str(int n,u8 *str)  //整数转字符串
+{
+	int length=int_num_length(n); //获取数字长度
+	str=str+int_num_length(n)-1;
+	while (n)
+	{
+		*str=n%10 + '0'; //转化为字符
+		n/=10;  //取位
+		str--;
+	}
+}
+
+void OLED_DisplayInt(u8 x,u8 y,u8 width,u8 height,int num) //在（x,y）点显示宽width，高height的数字num
+{
+	u8 num_str[30]; //按需求更改
+	u8 *num_p=num_str;
+	u8 i = 0;
+	int_to_str(num,&num_str[0]); //数字转字符串
+	num_p=&num_str[0]; //指针复位
+	for(i=0;i<int_num_length(num);i++)
+	{
+		OLED_DisplayString(x+i*8,y,16,16,num_p);
+		num_p++;
+	}
+
+}
+
+
+void OLED_DisplayString(u8 x,u8 y,u8 width,u8 height,u8 *str)  //显示字符串函数，width=16,height=16
 {
 	u8 addr=0,i;
 	u16 font=0;

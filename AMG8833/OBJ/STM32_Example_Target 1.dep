@@ -1,0 +1,107 @@
+Dependencies for Project 'STM32_Example', Target 'Target 1': (DO NOT MODIFY !)
+F (.\startup_stm32f10x_hd.s)(0x4AF2D936)(--cpu Cortex-M3 --li -g --apcs=interwork -I E:\2020\毕业设计\红外测温\STM32模板\USER\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I C:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 514" --pd "ARMCM3 SETA 1"--list ..\obj\startup_stm32f10x_hd.lst --xref -o ..\obj\startup_stm32f10x_hd.o --depend ..\obj\startup_stm32f10x_hd.d)
+F (.\main.c)(0x5E9EA61B)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDEARE\TIMER -I..\HARDEARE\DS1302 -I..\HARDEARE\STMFLASH -I..\HARDEARE\IIC -I..\HARDEARE\max30205 -I..\HARDEARE\AMG8833 -I..\HARDEARE\HMIsend-I E:\2020\毕业设计\红外测温\STM32模板\USER\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DARMCM3-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+I (..\SYSTEM\sys\sys.h)(0x50436833)
+I (..\SYSTEM\sys\stm32f10x_map.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_conf.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_type.h)(0x4A0282C6)
+I (..\SYSTEM\sys\cortexm3_macro.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_nvic.h)(0x4A0282C6)
+I (..\SYSTEM\usart\usart.h)(0x5D3A6E10)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (..\SYSTEM\delay\delay.h)(0x50436849)
+I (IO_init.h)(0x5E86F6A3)
+I (..\HARDEARE\TIMER\timer.h)(0x5D3A61F7)
+I (..\HARDEARE\STMFLASH\stmflash.h)(0x5D39483A)
+I (..\HARDEARE\IIC\IIC.h)(0x5E675E34)
+I (..\HARDEARE\AMG8833\AMG8833.h)(0x5E86A840)
+I (..\HARDEARE\HMIsend\HMIsend.h)(0x5E86E232)
+F (.\IO_init.c)(0x5E86F6A3)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDEARE\TIMER -I..\HARDEARE\DS1302 -I..\HARDEARE\STMFLASH -I..\HARDEARE\IIC -I..\HARDEARE\max30205 -I..\HARDEARE\AMG8833 -I..\HARDEARE\HMIsend-I E:\2020\毕业设计\红外测温\STM32模板\USER\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DARMCM3-o ..\obj\io_init.o --omf_browse ..\obj\io_init.crf --depend ..\obj\io_init.d)
+I (..\SYSTEM\sys\sys.h)(0x50436833)
+I (..\SYSTEM\sys\stm32f10x_map.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_conf.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_type.h)(0x4A0282C6)
+I (..\SYSTEM\sys\cortexm3_macro.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_nvic.h)(0x4A0282C6)
+I (..\SYSTEM\usart\usart.h)(0x5D3A6E10)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (..\SYSTEM\delay\delay.h)(0x50436849)
+I (IO_init.h)(0x5E86F6A3)
+F (..\SYSTEM\delay\delay.c)(0x50436880)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDEARE\TIMER -I..\HARDEARE\DS1302 -I..\HARDEARE\STMFLASH -I..\HARDEARE\IIC -I..\HARDEARE\max30205 -I..\HARDEARE\AMG8833 -I..\HARDEARE\HMIsend-I E:\2020\毕业设计\红外测温\STM32模板\USER\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DARMCM3-o ..\obj\delay.o --omf_browse ..\obj\delay.crf --depend ..\obj\delay.d)
+I (..\SYSTEM\delay\delay.h)(0x50436849)
+I (..\SYSTEM\sys\stm32f10x_map.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_conf.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_type.h)(0x4A0282C6)
+I (..\SYSTEM\sys\cortexm3_macro.h)(0x4A0282C6)
+I (..\SYSTEM\sys\sys.h)(0x50436833)
+I (..\SYSTEM\sys\stm32f10x_nvic.h)(0x4A0282C6)
+F (..\SYSTEM\sys\sys.c)(0x5D201A15)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDEARE\TIMER -I..\HARDEARE\DS1302 -I..\HARDEARE\STMFLASH -I..\HARDEARE\IIC -I..\HARDEARE\max30205 -I..\HARDEARE\AMG8833 -I..\HARDEARE\HMIsend-I E:\2020\毕业设计\红外测温\STM32模板\USER\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DARMCM3-o ..\obj\sys.o --omf_browse ..\obj\sys.crf --depend ..\obj\sys.d)
+I (..\SYSTEM\sys\sys.h)(0x50436833)
+I (..\SYSTEM\sys\stm32f10x_map.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_conf.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_type.h)(0x4A0282C6)
+I (..\SYSTEM\sys\cortexm3_macro.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_nvic.h)(0x4A0282C6)
+F (..\SYSTEM\usart\usart.c)(0x5E9EA49F)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDEARE\TIMER -I..\HARDEARE\DS1302 -I..\HARDEARE\STMFLASH -I..\HARDEARE\IIC -I..\HARDEARE\max30205 -I..\HARDEARE\AMG8833 -I..\HARDEARE\HMIsend-I E:\2020\毕业设计\红外测温\STM32模板\USER\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DARMCM3-o ..\obj\usart.o --omf_browse ..\obj\usart.crf --depend ..\obj\usart.d)
+I (..\SYSTEM\sys\sys.h)(0x50436833)
+I (..\SYSTEM\sys\stm32f10x_map.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_conf.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_type.h)(0x4A0282C6)
+I (..\SYSTEM\sys\cortexm3_macro.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_nvic.h)(0x4A0282C6)
+I (..\SYSTEM\usart\usart.h)(0x5D3A6E10)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
+F (..\HARDEARE\TIMER\timer.c)(0x5D462B88)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDEARE\TIMER -I..\HARDEARE\DS1302 -I..\HARDEARE\STMFLASH -I..\HARDEARE\IIC -I..\HARDEARE\max30205 -I..\HARDEARE\AMG8833 -I..\HARDEARE\HMIsend-I E:\2020\毕业设计\红外测温\STM32模板\USER\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DARMCM3-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
+I (..\SYSTEM\sys\sys.h)(0x50436833)
+I (..\SYSTEM\sys\stm32f10x_map.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_conf.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_type.h)(0x4A0282C6)
+I (..\SYSTEM\sys\cortexm3_macro.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_nvic.h)(0x4A0282C6)
+I (..\SYSTEM\usart\usart.h)(0x5D3A6E10)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (..\SYSTEM\delay\delay.h)(0x50436849)
+I (..\HARDEARE\TIMER\timer.h)(0x5D3A61F7)
+F (..\HARDEARE\STMFLASH\stmflash.c)(0x5D39479E)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDEARE\TIMER -I..\HARDEARE\DS1302 -I..\HARDEARE\STMFLASH -I..\HARDEARE\IIC -I..\HARDEARE\max30205 -I..\HARDEARE\AMG8833 -I..\HARDEARE\HMIsend-I E:\2020\毕业设计\红外测温\STM32模板\USER\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DARMCM3-o ..\obj\stmflash.o --omf_browse ..\obj\stmflash.crf --depend ..\obj\stmflash.d)
+I (..\SYSTEM\sys\sys.h)(0x50436833)
+I (..\SYSTEM\sys\stm32f10x_map.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_conf.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_type.h)(0x4A0282C6)
+I (..\SYSTEM\sys\cortexm3_macro.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_nvic.h)(0x4A0282C6)
+I (..\SYSTEM\usart\usart.h)(0x5D3A6E10)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (..\SYSTEM\delay\delay.h)(0x50436849)
+I (..\HARDEARE\STMFLASH\stmflash.h)(0x5D39483A)
+F (..\HARDEARE\IIC\IIC.c)(0x5E845938)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDEARE\TIMER -I..\HARDEARE\DS1302 -I..\HARDEARE\STMFLASH -I..\HARDEARE\IIC -I..\HARDEARE\max30205 -I..\HARDEARE\AMG8833 -I..\HARDEARE\HMIsend-I E:\2020\毕业设计\红外测温\STM32模板\USER\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DARMCM3-o ..\obj\iic.o --omf_browse ..\obj\iic.crf --depend ..\obj\iic.d)
+I (..\HARDEARE\IIC\IIC.h)(0x5E675E34)
+I (..\SYSTEM\sys\sys.h)(0x50436833)
+I (..\SYSTEM\sys\stm32f10x_map.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_conf.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_type.h)(0x4A0282C6)
+I (..\SYSTEM\sys\cortexm3_macro.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_nvic.h)(0x4A0282C6)
+I (..\SYSTEM\delay\delay.h)(0x50436849)
+F (..\HARDEARE\AMG8833\AMG8833.c)(0x5E8EF58F)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDEARE\TIMER -I..\HARDEARE\DS1302 -I..\HARDEARE\STMFLASH -I..\HARDEARE\IIC -I..\HARDEARE\max30205 -I..\HARDEARE\AMG8833 -I..\HARDEARE\HMIsend-I E:\2020\毕业设计\红外测温\STM32模板\USER\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DARMCM3-o ..\obj\amg8833.o --omf_browse ..\obj\amg8833.crf --depend ..\obj\amg8833.d)
+I (..\HARDEARE\AMG8833\AMG8833.h)(0x5E86A840)
+I (..\SYSTEM\sys\sys.h)(0x50436833)
+I (..\SYSTEM\sys\stm32f10x_map.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_conf.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_type.h)(0x4A0282C6)
+I (..\SYSTEM\sys\cortexm3_macro.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_nvic.h)(0x4A0282C6)
+I (..\HARDEARE\IIC\IIC.h)(0x5E675E34)
+I (..\SYSTEM\delay\delay.h)(0x50436849)
+I (..\SYSTEM\usart\usart.h)(0x5D3A6E10)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
+F (..\HARDEARE\HMIsend\HMIsend.c)(0x5E8BE5AF)(-c --cpu Cortex-M3 --li -g -O0 --apcs=interwork -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\HARDEARE\TIMER -I..\HARDEARE\DS1302 -I..\HARDEARE\STMFLASH -I..\HARDEARE\IIC -I..\HARDEARE\max30205 -I..\HARDEARE\AMG8833 -I..\HARDEARE\HMIsend-I E:\2020\毕业设计\红外测温\STM32模板\USER\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.2.0\Device\ARM\ARMCM3\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DARMCM3-o ..\obj\hmisend.o --omf_browse ..\obj\hmisend.crf --depend ..\obj\hmisend.d)
+I (..\SYSTEM\delay\delay.h)(0x50436849)
+I (..\SYSTEM\sys\stm32f10x_map.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_conf.h)(0x4A0282C6)
+I (..\SYSTEM\sys\stm32f10x_type.h)(0x4A0282C6)
+I (..\SYSTEM\sys\cortexm3_macro.h)(0x4A0282C6)
+I (..\SYSTEM\usart\usart.h)(0x5D3A6E10)
+I (..\SYSTEM\sys\stm32f10x_nvic.h)(0x4A0282C6)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (..\HARDEARE\HMIsend\HMIsend.h)(0x5E86E232)
+I (..\SYSTEM\sys\sys.h)(0x50436833)

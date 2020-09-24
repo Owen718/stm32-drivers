@@ -19,8 +19,8 @@ void OLED_send_data(unsigned char o_data);  //发送数据
 void Column_set(unsigned char column);  //设置列
 void Page_set(unsigned char page);  //设置页
 
-
-
+//转换函数
+void float_to_str(float n,char *reChar,int zsize,int xsize,int flag);
 
 //OLED功能集成函数
 void OLED_clear(void);  //清屏函数
@@ -32,9 +32,7 @@ void Picture_ReverseDisplay(const unsigned char *ptr_pic);
 void OLED_Draw_Point(u8 x,u8 y,u8 c);
 void OLED_Fill(u8 x1,u8 y1,u8 x2,u8 y2,u8 dot);  // 填充/清除 以(x1,y1),(x2,y2)为对角的矩形区域 
 void OLED_SetCursorAddrese(u8 x,u8 y);
-void OLED_DisplayString(u8 x,u8 y,u8 width,u8 height,u8 *str); 
-void int_to_str(int n,u8 *str);  //整数转字符串
-u8 int_num_length(int n);  //返回整数的长度
+void OLED_DisplayString(u8 x,u8 y,u8 width,u8 height,u8 *str);
 void OLED_DisplayInt(u8 x,u8 y,u8 width,u8 height,int num); //在（x,y）点显示宽width，高height的数字num
 #endif
 

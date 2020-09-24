@@ -212,7 +212,7 @@ void OLED_Refresh_Gram(void)  //¸üĞÂGramÏÔ´æµ½OLEDÆÁÄ»
 	u8 page,list;  //¶¨ÒåÒ³µØÖ·ºÍÁĞµØÖ·
 	for(page=0;page<8;page++)
 	{
-		OLED_send_cmd(page); //ÉèÖÃÒ³µØÖ·£¨0~7£©
+		OLED_send_cmd(0xb0+page); //ÉèÖÃÒ³µØÖ·£¨0~7£©
 		OLED_send_cmd(0x00);      //ÉèÖÃÏÔÊ¾Î»ÖÃ¨DÁĞµÍµØÖ·
 		OLED_send_cmd(0x10);      //ÉèÖÃÏÔÊ¾Î»ÖÃ¨DÁĞ¸ßµØÖ· 
 		for(list=0;list<128;list++)
@@ -220,7 +220,7 @@ void OLED_Refresh_Gram(void)  //¸üĞÂGramÏÔ´æµ½OLEDÆÁÄ»
 			OLED_send_data(oled_show_tab[page][list]);
 		}
 	}
-	memset(oled_show_tab,0,sizeof(oled_show_tab));	/*Çå¿ÕÏÔ´æÊı×é*/
+	//memset(oled_show_tab,0,sizeof(oled_show_tab));	/*Çå¿ÕÏÔ´æÊı×é*/
 
 }
 
@@ -231,7 +231,7 @@ void OLED_clear(void)  //ÇåÆÁº¯Êı
 	u8 i,n;
 	for(i=0;i<8;i++)
 	{
-		OLED_send_cmd(0xB0+i);
+		OLED_send_cmd(0xb0+i);
 		OLED_send_cmd(0x00);  //ÉèÖÃÏÔÊ¾Î»ÖÃ¨DÁĞµÍµØÖ·
 		OLED_send_cmd(0x10);  //ÉèÖÃÏÔÊ¾Î»ÖÃ¨DÁĞ¸ßµØÖ· 
 		for(n=0;n<128;n++)
@@ -263,6 +263,9 @@ void OLED_init(void)  //OLED³õÊ¼»¯º¯Êı
 {
 
 	unsigned char i;
+	IO_init();
+	delay_ms(10);
+
 	for(i=0;i<25;i++)
 	{
 		OLED_send_cmd(OLED_init_cmd[i]);
@@ -313,20 +316,37 @@ void OLED_Draw_Point(u8 x,u8 y,u8 c)
 		oled_show_tab[x][7-y/8] |= ~(0x1 << (7-y%8));  //Ï¨Ãğ¸Ãµã
 	}
 	
-	
 }
 
-//x1,y1,x2,y2 Ìî³äÇøÓòµÄ¶Ô½Ç×ø±ê
+//Ìî³ä£¨x1£¬y1)µ½(x2,y1+16)ÇøÓò
 //È·±£x1<=x2;y1<=y2 0<=x1<=127 0<=y1<=63	 	 
 //dot:0,Çå¿Õ;1,Ìî³ä	  
 void OLED_Fill(u8 x1,u8 y1,u8 x2,u8 y2,u8 dot)  
 {  
-	u8 x,y;  
-	for(x=x1;x<=x2;x++)
+	char i = 0;
+	OLED_SetCursorAddrese(x1,y1);
+	if(dot)
 	{
-		for(y=y1;y<=y2;y++)OLED_Draw_Point(x,y,dot);
-	}													    
-	OLED_Refresh_Gram();//¸üĞÂÏÔÊ¾
+		for(i=x1;i<=x2;i++)
+			OLED_send_data(0xff);
+	}
+	else
+	{
+		for(i=x1;i<=x2;i++)
+			OLED_send_data(0x00);
+	}
+	OLED_SetCursorAddrese(x1,y1+1);
+	if(dot)
+	{
+		for(i=x1;i<=x2;i++)
+			OLED_send_data(0xff);
+	}
+	else
+	{
+		for(i=x1;i<=x2;i++)
+			OLED_send_data(0x00);
+	}
+	
 }
 
 
@@ -521,6 +541,31 @@ void OLED_DisplayString(u8 x,u8 y,u8 width,u8 height,u8 *str)  //ÏÔÊ¾×Ö·û´®º¯Êı£
 				case 0xC1F9:addr=48;break;//Áù
 				case 0xC4EA:addr=49;break;//Äê
 				case 0xD4C2:addr=50;break;//ÔÂ
+				case 0xBCE4:addr=51;break;//¼ä
+				case 0xC3EB:addr=52;break;//Ãë
+				case 0xD2F5:addr=53;break;//Òõ
+				case 0xC7E7:addr=54;break;//Çç
+				case 0xB6E0:addr=55;break;//¶à
+				case 0xD4C6:addr=56;break;//ÔÆ
+				case 0xB4F3:addr=57;break;//´ó
+				case 0xD3EA:addr=58;break;//Óê
+				case 0xD0A1:addr=59;break;//Ğ¡
+				case 0xD1A9:addr=60;break;//Ñ©
+				case 0xCCA8:addr=61;break;//Ì¨
+				case 0xB7E7:addr=62;break;//·ç
+				case 0xB1A9:addr=63;break;//±©
+				case 0xD4E7:addr=64;break;//Ôç
+				case 0xBAC3:addr=65;break;//ºÃ
+				case 0xCDED:addr=66;break;//Íí
+				case 0xB0B2:addr=67;break;//°²
+				case 0xB7D6:addr=68;break;//·Ö
+				case 0xC4D6:addr=69;break;//ÄÖ
+				case 0xD6D3:addr=70;break;//ÖÓ
+				case 0xCAB1:addr=71;break;//Ê±
+				case 0xC4FA:addr=72;break;//Äú
+				case 0xB5C4:addr=73;break;//µÄ
+				case 0xCCE5:addr=74;break;//Ìå
+				case 0xCEAA:addr=75;break;//Îª
 				default : break;
 			}
 			for(i=0;i<width;i++) //ºáÏòĞ´widthÁĞ

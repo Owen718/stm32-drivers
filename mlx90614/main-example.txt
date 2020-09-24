@@ -1,0 +1,77 @@
+#include "stm32f10x.h"
+#include "led.h"
+#include "delay.h"
+#include "key.h"
+#include "0.96OLED4PINI2C.h"
+#include "rtc.h"
+#include "MLX90614.h"
+#include "usart.h"
+int main(void)
+{
+	
+	u8 t;
+	u8 k=50;
+	u8 j=50;
+	char temp_str[20];
+	float temp=0;//温度变量浮点数
+	int count=0;
+	 
+	delay_init();   //延时函数初始化
+	
+	LED_Init();  //LED初始化
+	KEY_Init();  //按键初始化
+	OLED_init();  //OLED屏幕初始化
+	RTC_Init();  //时钟初始化
+	delay_ms(10);
+	OLED_clear(); //OLED清屏
+	SMBus_Init();
+	uart_init(9600); //串口初始化为9600
+	t = KEY_Scan(0);
+	
+	
+	while(1)
+	{
+		
+		//读取MLX90614的温度
+		temp = 0;
+		for(count=0;count<10;count++)
+		{
+			temp=temp+SMBus_ReadTemp();  //读取温度
+			
+		}
+		temp = temp / 10.0;
+		float_to_str(temp,temp_str,2,2,0);
+		
+		
+		//时间显示
+		OLED_DisplayString(32,0,16,16,"年");
+		OLED_Fill(0,0,16,16,0);
+		OLED_DisplayInt(0,0,16,16,calendar.w_year);	
+		OLED_DisplayString(62,0,16,16,"月");
+		OLED_Fill(56,0,16,16,0);
+		OLED_DisplayInt(56,0,8,16,calendar.w_month);
+		OLED_DisplayString(94,0,16,16,"日");
+		OLED_Fill(78,0,16,16,0);
+		OLED_DisplayInt(78,0,8,16,calendar.w_date);
+		OLED_DisplayString(16,2,16,16,"时");  
+		OLED_Fill(0,2,16,16,0);
+		OLED_DisplayInt(0,2,8,16,calendar.hour);	
+		OLED_DisplayString(48,2,16,16,"分");
+		OLED_Fill(32,2,16,16,0);
+		OLED_DisplayInt(32,2,8,16,calendar.min);
+		
+		
+		OLED_DisplayString(0,4,16,16,"您的体温为:");
+		OLED_DisplayString(88,4,16,16,temp_str);
+		//OLED_DisplayInt(0,6,8,16,(int)temp);
+		printf("%s",temp_str);	
+		printf("\r\n");
+		
+		LED0 = !LED0;		
+	
+	
+	}
+
+
+}
+
